@@ -29,8 +29,8 @@ public class PersonaEntity implements Serializable{ // Preguntar por que se impl
 
 	}
 
-	public PersonaEntity(long id, String nombre, double saldo) {
-		this.id = id;
+	// El id no esta porque es autoincrementado
+	public PersonaEntity(String nombre, double saldo) {
 		this.nombre = nombre;
 		this.saldo = saldo;
 	}

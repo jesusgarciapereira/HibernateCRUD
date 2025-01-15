@@ -9,7 +9,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class AccesoBBDD {
 
-	private SessionFactory sf;
+	SessionFactory sf;
 	private Session sesion;
 	private Transaction transaccion;
 
@@ -21,6 +21,7 @@ public class AccesoBBDD {
 		
 		try {
 			sf = new MetadataSources(registro).buildMetadata().buildSessionFactory();
+			
 		}
 		catch(Exception e) {
 			StandardServiceRegistryBuilder.destroy(registro);
@@ -42,6 +43,10 @@ public class AccesoBBDD {
 		}
 		sf.close();
 
+	}
+	
+	public Object guardar(Object objeto) {
+		return sesion.save(objeto);
 	}
 
 }
